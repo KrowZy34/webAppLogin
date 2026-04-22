@@ -1,12 +1,31 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/loginPage";
+import Register from "./pages/register";
+import HomePage from "./pages/homePage";
+import PrivateRoute from "./routes/PrivateRoute";
+import { AuthProvider } from "./auth/AuthContext";
 
 function App() {
   return (
-    <>
-      <h1> Prueba </h1>
-      <h2>Subtítulo </h2>
-      <img src="https://i.pinimg.com/236x/5c/01/78/5c0178c31a9c9191f548cc7599f32c4c.jpg" alt="teto" />
-    </>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/register" element={<Register />} />
+
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <HomePage />
+              </PrivateRoute>
+            }
+          />
+
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
