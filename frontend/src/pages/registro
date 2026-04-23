@@ -1,0 +1,65 @@
+<div class="flex items-center justify-center p-8 bg-gray-50 rounded-2xl">
+  <div class="w-full max-w-md bg-white border border-gray-200 rounded-2xl p-8">
+
+    <!-- Encabezado -->
+    <div class="mb-7">
+      <h2 class="text-xl font-medium text-gray-900 mb-1">Crear cuenta</h2>
+      <p class="text-sm text-gray-500">Completa los datos para registrarte</p>
+    </div>
+
+    <!-- Nombre y Apellido -->
+    <div class="grid grid-cols-2 gap-3 mb-3">
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">Nombre</label>
+        <input type="text" placeholder="Ana"
+          class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label class="block text-xs text-gray-500 mb-1">Apellido</label>
+        <input type="text" placeholder="García"
+          class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label class="block text-xs text-gray-500 mb-1">Correo electrónico</label>
+      <input type="email" placeholder="ana@correo.com"
+        class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <!-- Contraseña -->
+    <div class="mb-3">
+      <label class="block text-xs text-gray-500 mb-1">Contraseña</label>
+      <input type="password" placeholder="Mínimo 8 caracteres"
+        class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <!-- Confirmar contraseña -->
+    <div class="mb-6">
+      <label class="block text-xs text-gray-500 mb-1">Confirmar contraseña</label>
+      <input type="password" placeholder="Repite tu contraseña"
+        class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <!-- Términos -->
+    <div class="flex items-start gap-2 mb-6">
+      <input type="checkbox" class="mt-0.5 shrink-0" />
+      <p class="text-xs text-gray-500 leading-relaxed">
+        Acepto los <span class="text-blue-600 cursor-pointer">términos y condiciones</span>
+        y la <span class="text-blue-600 cursor-pointer">política de privacidad</span>
+      </p>
+    </div>
+
+    <!-- Botón -->
+    <button class="w-full bg-gray-900 text-white text-sm font-medium py-2.5 rounded-lg hover:bg-gray-700 transition-colors">
+      Crear cuenta
+    </button>
+
+    <!-- Link login -->
+    <p class="text-xs text-center text-gray-500 mt-4">
+      ¿Ya tienes cuenta? <span class="text-blue-600 cursor-pointer">Inicia sesión</span>
+    </p>
+
+  </div>
+</div>
