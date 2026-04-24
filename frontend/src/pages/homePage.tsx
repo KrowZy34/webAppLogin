@@ -1,34 +1,26 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../auth/AuthContext";
-import { useNavigate } from "react-router-dom";
 
-export default function HomePage() {
+const HomePage: React.FC = () => {
   const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  return (
-    <div>
-      <h1>Home (protegido)</h1>
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
-      <button
-        onClick={() => {
-          logout();
-          navigate("/");
-        }}
-      >
-        Logout
-      </button>
-    </div>
-  );
-}
-import React from "react";
-import { Link } from "react-router-dom";
-
-const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white flex items-center justify-center px-4">
       
-      <div className="w-full max-w-2xl bg-gray-800 rounded-2xl shadow-2xl p-10 text-center">
+      <div className="w-full max-w-2xl bg-gray-800 rounded-2xl shadow-2xl p-10 text-center relative">
+        <button
+          onClick={handleLogout}
+          className="absolute top-6 right-6 text-sm text-red-400 hover:text-red-300 transition px-3 py-1 border border-red-500 rounded-md hover:bg-red-500 hover:bg-opacity-20"
+        >
+          Cerrar Sesión
+        </button>
 
         {/* TÍTULO */}
         <h1 className="text-4xl font-bold mb-4">
