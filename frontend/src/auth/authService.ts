@@ -20,6 +20,7 @@ export const registerUser = (email: string, password: string) => {
 
   users.push({ email, password });
   saveUsers(users);
+  localStorage.setItem("userEmail", email);
 };
 
 export const loginUser = (email: string, password: string) => {
@@ -33,10 +34,12 @@ export const loginUser = (email: string, password: string) => {
 
   const fakeToken = "token_" + Date.now();
   localStorage.setItem(TOKEN_KEY, fakeToken);
+  localStorage.setItem("userEmail", email);
 };
 
 export const logoutUser = () => {
   localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem("userEmail");
 };
 
 export const isAuthenticated = (): boolean => {
