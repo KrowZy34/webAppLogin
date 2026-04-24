@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../auth/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function Login() {
-  const { login } = useContext(AuthContext);
+export default function Register() {
+  const { register } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -13,8 +13,9 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      login(email, password);
-      navigate("/home");
+      register(email, password);
+      alert("Registrado");
+      navigate("/");
     } catch (error: any) {
       alert(error.message);
     }
@@ -22,7 +23,7 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
+      <h2>Register</h2>
 
       <input
         type="email"
@@ -36,10 +37,10 @@ export default function Login() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button type="submit">Ingresar</button>
+      <button type="submit">Registrar</button>
 
       <p>
-        <Link to="/register">Registrarse</Link>
+        <Link to="/">Login</Link>
       </p>
     </form>
   );
